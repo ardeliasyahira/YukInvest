@@ -35,11 +35,8 @@ Usaha Mikro Kecil Menengah atau biasa disebut juga dengan UMKM, merupakan salah 
 3. Pasar saham UMKM (Nurul Hanina Efendi)
 4. Pendanaan UMKM (Nugraha Aktwovhiday Abdullah G)
 5. Profile Page (Ardelia Syahira Yudiva)
-6. Informasi profil
-7. Daftar investasi yang dimiliki
-8. Admin page (Favian Naufal)
-9. Daftar verifikasi UMKM
-10. Informasi UMKM terdaftar (Muhammad Tsaqib Ibadillah Wahid)
+6. Admin page (Favian Naufal)
+7. Informasi UMKM terdaftar (Muhammad Tsaqib Ibadillah Wahid)
 
 ## Persona
 1. Guest user
