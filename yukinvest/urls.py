@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import homepage.urls as homepage
+import pendanaan.urls as pendanaan
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(homepage))
+    path('', include(homepage)),
+    path('pendanaan/', include(pendanaan)),
 ]
