@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 import homepage.urls as homepage
 import pendanaan.urls as pendanaan
+import infoumkm.urls as infoumkm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
+    path('info/', include(infoumkm)),
 ]
