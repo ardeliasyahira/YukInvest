@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class EditProfil(models.Model):
-    fotoprofil = models.FileField(upload_to='documents/%Y/%m/%d')
+    fotoprofil = models.FileField(upload_to='documents/%Y/%m/%d', default='Foto Profil')
     namadepan = models.CharField(max_length=30)
     namabelakang = models.CharField(max_length=30)
     tempatlahir = models.CharField(max_length=30)
@@ -31,8 +31,8 @@ class EditProfil(models.Model):
 #Dokumen
     sid = models.IntegerField()
     noktp = models.IntegerField()
-    fotoktp = models.FileField(upload_to='documents/%Y/%m/%d')
-    fotoselfie = models.FileField(upload_to='documents/%Y/%m/%d')
+    fotoktp = models.FileField(upload_to='documents/%Y/%m/%d', default = 'Foto KTP')
+    fotoselfie = models.FileField(upload_to='documents/%Y/%m/%d', default = 'Foto Selfie')
 #Bank
     namabank = models.CharField(max_length=50)
     norekening = models.IntegerField()
