@@ -20,10 +20,12 @@ from django.conf.urls.static import static
 import homepage.urls as homepage
 import pendanaan.urls as pendanaan
 import profil.urls as profil
+import infoumkm.urls as infoumkm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
-    path('profil/', include(profil))
+    path('profil/', include(profil)),
+    path('info/', include(infoumkm))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
