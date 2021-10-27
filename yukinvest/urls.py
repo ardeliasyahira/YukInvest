@@ -17,15 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-import homepage.urls as homepage
-import pendanaan.urls as pendanaan
+# import homepage.urls as homepage
+# import pendanaan.urls as pendanaan
 import profil.urls as profil
-import infoumkm.urls as infoumkm
+# import infoumkm.urls as infoumkm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(homepage)),
-    path('pendanaan/', include(pendanaan)),
-    path('profil/', include(profil)),
-    path('info/', include(infoumkm))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # path('', include(homepage)),
+    # path('pendanaan/', include(pendanaan)),
+    path('profil/', include(profil))
+    # path('info/', include(infoumkm))
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, 
+document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, 
+document_root=settings.MEDIA_ROOT)

@@ -1,45 +1,29 @@
 from django.db import models
+# from django.contrib.auth.models import User
 
 # Create your models here.
 
 class EditProfil(models.Model):
-    fotoprofil = models.FileField(upload_to='documents/%Y/%m/%d', default='Foto Profil')
-    namadepan = models.CharField(max_length=30)
-    namabelakang = models.CharField(max_length=30)
-    tempatlahir = models.CharField(max_length=30)
-    tanggallahir = models.DateField()
-    latarbelakang = models.TextField()
-    notelpon = models.IntegerField()
-    norumah = models.IntegerField()
-    alamatktp = models.TextField()
-    provinsi = models.CharField(max_length = 30)
-    kotakabu = models.CharField(max_length = 30)
-    kecamatan = models.CharField(max_length = 30)
-    kelurahan = models.CharField(max_length = 30)
-    rt = models.IntegerField()
-    rw = models.IntegerField()
-    alamatskrg = models.TextField()
-    provinsi2 = models.CharField(max_length = 30)
-    kotakabu2 = models.CharField(max_length = 30)
-    kecamatan2 = models.CharField(max_length = 30)
-    kelurahan2 = models.CharField(max_length = 30)
-    rt2 = models.IntegerField()
-    rw2 = models.IntegerField()
+    # user = models.OneToOneField(User, on_delete=models.CASCADE, default='') # Delete profile when user is deleted
+    fotoprofil = models.ImageField(upload_to='documents/%Y/%m/%d', default = "", null = True, blank = True)
+    namadepan = models.CharField(max_length = 30, default = '', null = True)
+    namabelakang = models.CharField(max_length = 30, default = '', null = True)
 #Pekerjaan
-    deskripsibisnis = models.TextField()
-    deskripsisumber = models.TextField()
+    deskripsibisnis = models.TextField(default = '', null = True)
+    deskripsisumber = models.TextField(default = '', null = True)
 #Dokumen
-    sid = models.IntegerField()
-    noktp = models.IntegerField()
-    fotoktp = models.FileField(upload_to='documents/%Y/%m/%d', default = 'Foto KTP')
-    fotoselfie = models.FileField(upload_to='documents/%Y/%m/%d', default = 'Foto Selfie')
+    sid = models.IntegerField(default = '', null = True)
+    noktp = models.IntegerField(default = '',null = True)
+    fotoktp = models.ImageField(upload_to='documents/%Y/%m/%d', default = 'Foto KTP', null = True)
+    fotoselfie = models.ImageField(upload_to='documents/%Y/%m/%d', default = 'Foto Selfie', null = True)
 #Bank
-    namabank = models.CharField(max_length=50)
-    norekening = models.IntegerField()
-    namapemilik = models.CharField(max_length=50)
-    namaibu = models.CharField(max_length=50)
-    namaahliwaris = models.CharField(max_length=50)
-    ubahliwaris = models.CharField(max_length=50)
+    namabank = models.CharField(max_length=50, default = '', null = True)
+    norekening = models.IntegerField(null = True)
+    namapemilik = models.CharField(max_length=50, default = '', null = True)
+    namaibu = models.CharField(max_length=50, default = '', null = True)
+    namaahliwaris = models.CharField(max_length=50, default = '', null = True)
+    ubahliwaris = models.CharField(max_length=50, default = '', null = True)
+#Preferensi
 
 
 

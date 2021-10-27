@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+{% block content %}
 <head>
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Edit profile - YukInvest</title>
+    <title> YukInvest </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -15,101 +17,194 @@
 <div class="container bootstrap snippets bootdeys">
 <div class="row">
   <div class="col-xs-12 col-sm-9">
-    <form class="form-horizontal">
-        <div class="panel panel-default">
-          <div class="panel-body text-center">
-           <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-circle profile-avatar" alt="User avatar">
-          </div>
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="panel panel-default">
+        <!-- Buat foto profil -->
+        <div class="panel-body text-center">
+          {{form.fotoprofil}}
+          <img  src = "{{avatar.fotoprofil.url}}" class="img-circle profile-avatar" alt="User avatar">
         </div>
+      </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-        <h4 class="panel-title">User info</h4>
+        <h4 class="panel-title">Data Diri</h4>
         </div>
         <div class="panel-body">
           <div class="form-group">
-            <label class="col-sm-2 control-label">Location</label>
+            <label class="col-sm-2 control-label">Nama depan</label>
+            <div class="col-sm-10"> {{form.namadepan}} </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Nama belakang</label>
+            <div class="col-sm-10"> {{form.namabelakang}} </div>
+          </div>
+          <div _ngcontent-serverapp-c93="" class="input-group justify-between">
+            <span _ngcontent-serverapp-c93="" class="input-disclaimer">*Saya menjamin bahwa informasi yang saya cantumkan diatas adalah benar dan siap bertanggung jawab atas segala konsekuensi yang terjadi di kemudian hari, serta memiliki kemampuan analisis risiko terhadap saham Penerbit dan memenuhi kriteria Pemodal sesuai peraturan yang berlaku.</span>
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h4 class="panel-title">Pekerjaan</h4>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Pendapatan Per Bulan</label>
             <div class="col-sm-10">
-              <select class="form-control">
-                <option selected="">Select country</option>
-                <option>Belgium</option>
-                <option>Canada</option>
-                <option>Denmark</option>
-                <option>Estonia</option>
-                <option>France</option>
-              </select>
+              {{form.pendapatan}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Company name</label>
+            <label class="col-sm-2 control-label">Sumber Pendapatan</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control">
+              {{form.sumber}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Position</label>
+            <label class="col-sm-2 control-label">Deskripsi Bisnis</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control">
+              {{form.deskripsibisnis}}
             </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Deskripsi Sumber Pendapatan</label>
+            <div class="col-sm-10">
+              {{form.deskripsisumber}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Sumber Pendapatan</label>
+            <div class="col-sm-10">
+              {{form.sumber}}
+            </div>
+          </div>
+          <div _ngcontent-serverapp-c93="" class="input-group justify-between">
+            <span _ngcontent-serverapp-c93="" class="input-disclaimer">*Jika penghasilan Anda <= Rp 500.000.000,00 / tahun, maka maksimal investasi Anda 5% dari total penghasilan / tahun 
+              **Jika penghasilan Anda > Rp 500.000.000,00 / tahun, maka maksimal investasi Anda 10% dari total penghasilan / tahun 
+              ***Saya menjamin bahwa informasi yang saya cantumkan diatas adalah benar dan siap bertanggung jawab atas segala konsekuensi yang terjadi di kemudian hari, serta memiliki kemampuan analisis risiko terhadap saham Penerbit dan memenuhi kriteria Pemodal sesuai peraturan yang berlaku.</span>
           </div>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-        <h4 class="panel-title">Contact info</h4>
+        <h4 class="panel-title">Dokumen</h4>
         </div>
         <div class="panel-body">
           <div class="form-group">
-            <label class="col-sm-2 control-label">Work number</label>
+            <label class="col-sm-2 control-label">No. SID</label>
             <div class="col-sm-10">
-              <input type="tel" class="form-control">
+              {{form.sid}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Mobile number</label>
+            <label class="col-sm-2 control-label">No. KTP</label>
             <div class="col-sm-10">
-              <input type="tel" class="form-control">
+              {{form.noktp}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">E-mail address</label>
+            <label class="col-sm-2 control-label">Foto Selfie</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control">
+              {{form.fotoselfie}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Work address</label>
+            <label class="col-sm-2 control-label">Foto KTP</label>
             <div class="col-sm-10">
-              <textarea rows="3" class="form-control"></textarea>
+              {{form.fotoktp}}
             </div>
+          </div>
+          <div _ngcontent-serverapp-c93="" class="input-group justify-between">
+            <span _ngcontent-serverapp-c93="" class="input-disclaimer">*Saya menjamin bahwa informasi yang saya cantumkan diatas adalah benar dan siap bertanggung jawab atas segala konsekuensi yang terjadi di kemudian hari, serta memiliki kemampuan analisis risiko terhadap saham Penerbit dan memenuhi kriteria Pemodal sesuai peraturan yang berlaku.</span>
           </div>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-        <h4 class="panel-title">Security</h4>
+        <h4 class="panel-title">Bank</h4>
         </div>
         <div class="panel-body">
           <div class="form-group">
-            <label class="col-sm-2 control-label">Current password</label>
+            <label class="col-sm-2 control-label">Nama Bank</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control">
+              {{form.namabank}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">New password</label>
+            <label class="col-sm-2 control-label">Nomor Rekening</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control">
+              {{form.norekening}}
             </div>
           </div>
           <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-              <div class="checkbox">
-                <input type="checkbox" id="checkbox_1">
-                <label for="checkbox_1">Make this account public</label>
+            <label class="col-sm-2 control-label">Nama Pemilik Rekening</label>
+            <div class="col-sm-10">
+              {{form.namapemilik}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Nama Ibu Kandung</label>
+            <div class="col-sm-10">
+              {{form.namaibu}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Nama Ahli Waris</label>
+            <div class="col-sm-10">
+              {{form.namaahliwaris}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Hubungan Ahli Waris</label>
+            <div class="col-sm-10">
+              {{form.ubahliwaris}}
+            </div>
+          </div>
+          <div _ngcontent-serverapp-c93="" class="input-group justify-between">
+            <span _ngcontent-serverapp-c93="" class="input-disclaimer">*Saya menjamin bahwa informasi yang saya cantumkan diatas adalah benar dan siap bertanggung jawab atas segala konsekuensi yang terjadi di kemudian hari, serta memiliki kemampuan analisis risiko terhadap saham Penerbit dan memenuhi kriteria Pemodal sesuai peraturan yang berlaku.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Preferensi</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Budget Investasi</label>
+              <div class="col-sm-10">
+                {{form.budgetinvestasi}}
               </div>
             </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Tujuan Investasi</label>
+              <div class="col-sm-10">
+                {{form.tujuanInvestasi}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Preferensi Resiko Investasi</label>
+              <div class="col-sm-10">
+                {{form.resiko}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Preferensi Peran</label>
+              <div class="col-sm-10">
+                {{form.prefperan}}
+              </div>
+            </div>
+            <div _ngcontent-serverapp-c93="" class="input-group justify-between">
+              <span _ngcontent-serverapp-c93="" class="input-disclaimer">*Saya menjamin bahwa informasi yang saya cantumkan diatas adalah benar dan siap bertanggung jawab atas segala konsekuensi yang terjadi di kemudian hari, serta memiliki kemampuan analisis risiko terhadap saham Penerbit dan memenuhi kriteria Pemodal sesuai peraturan yang berlaku.</span>
+            </div>
+
+          </div>
+        </div>
+          <div class="form-group">
           </div>
           <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">
@@ -118,12 +213,13 @@
             </div>
           </div>
         </div>
-      </div>
     </form>
   </div>
 </div>
 </div>
 
+
+{% endblock %}
 <style type="text/css">
 
 body{
@@ -195,9 +291,7 @@ form label {
   border: 4px solid #f3f3f3;
 }
 </style>
-
 <script type="text/javascript">
-
 </script>
 </body>
 </html>

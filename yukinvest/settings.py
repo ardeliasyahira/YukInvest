@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'homepage',
     'pendanaan',
     'infoumkm',
-    'profil',
+    'profil'
 ]
 
 MIDDLEWARE = [
@@ -137,4 +137,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add static root for unit test
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
