@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'homepage',
     'pendanaan',
     'infoumkm',
+    'profil'
 ]
 
 MIDDLEWARE = [
