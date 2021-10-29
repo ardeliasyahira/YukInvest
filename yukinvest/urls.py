@@ -27,5 +27,5 @@ urlpatterns = [
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
     path('profil/', include(profil)),
-    path('info/', include(infoumkm))
+    path('daftarumkm/', include(infoumkm))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
