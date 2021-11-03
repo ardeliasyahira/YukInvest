@@ -24,13 +24,28 @@ def get_user(request):
     return HttpResponse(userdb_json, content_type="application/json")
 
 def validate_umkm(request, umkm_id):
-    return
+    try:
+        UMKM.objects.get(id=umkm_id).validate_status()
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect("admin-page:index")
 
 def invalidate_umkm(request, umkm_id):
-    return
+    try:
+        UMKM.objects.get(id=umkm_id).invalidate_status()
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect("admin-page:index")
 
 def delete_user(request, user_id):
-    return
+    try:
+        EditProfil.objects.get(id=user_id).delete()
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect("admin-page:user_index")
 
 def edit_user(request, user_id):
     return
