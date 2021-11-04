@@ -1,7 +1,11 @@
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready)
+    // document.getElementsByClassName('saham-quantity-input')[0].value = 1
+    // document.getElementsByClassName('saham-total-harga')[0].innerText = 'Rp. 100,000'
 } else {
     ready()
+    // document.getElementsByClassName('saham-quantity-input')[0].value = 1
+    // document.getElementsByClassName('saham-total-harga')[0].innerText = 'Rp. 100,000'
 }
 
 function updatePrice(value) {
@@ -38,9 +42,11 @@ function decreaseValue() {
 }
 
 function beli() {
+    // some ajax code to be written here to modify model attribute
     alert('Terima kasih atas transaksi yang dilakukan!')
     document.getElementsByClassName('saham-quantity-input')[0].value = 1
     document.getElementsByClassName('saham-total-harga')[0].innerText = 'Rp. 100,000'
+    document.getElementsByClassName('saham-total-imbal-balik')[0].innerText = 'Rp. 7,500'
 }
 
 function updateTotalPembelian(value) {
