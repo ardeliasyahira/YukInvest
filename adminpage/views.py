@@ -39,6 +39,14 @@ def invalidate_umkm(request, umkm_id):
     finally:
         return redirect("admin-page:index")
 
+def delete_umkm(request, umkm_id):
+    try:
+        UMKM.objects.get(id=umkm_id).delete()
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect("admin-page:index")
+
 def delete_user(request, user_id):
     try:
         EditProfil.objects.get(id=user_id).delete()
