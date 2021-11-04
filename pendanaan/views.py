@@ -11,7 +11,11 @@ def index(request):
 
 # @login_required(login_url="")
 def view_umkm(request):
-    return render(request, "pendanaan/view_umkm.html")
+    umkm = UMKM.objects.all()
+    # user_umkm = umkm.filter(user=request.user)
+    obj = UMKM.objects.get(pk=1)
+    obj_dict = {"obj": obj}
+    return render(request, "pendanaan/view_umkm.html", obj_dict)
 
 # @login_required(login_url="")
 def get_umkm(request):
@@ -22,6 +26,10 @@ def get_umkm(request):
 # @login_required(login_url="")
 def add_umkm(request):
     form = UMKMForm()
+    umkm = UMKM.objects.all()
+    # user_umkm = umkm.filter(user=request.user)
+    #  if user_umkm:
+	#  return redirect("pendanaan:view_umkm")
     if request.method == "POST":
         # data = request.POST.dict()
         # data["user"] = request.user

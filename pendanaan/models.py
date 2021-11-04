@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UMKM(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     ACEH = 'Aceh'
     SUMATERA_UTARA = 'Sumatera Utara'

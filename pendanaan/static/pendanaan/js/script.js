@@ -1,9 +1,6 @@
 const getUMKM = () => {
   $.get("/pendanaan/api/").done((data) => {
     let merekBisnis = `<h2>${data[0].fields.merek_bisnis}</h2>`;
-    let fotoLogo = `<img src="/media/${data[0].fields.logo_usaha}" style="max-height:1000px;width:auto;" alt="logo usaha">`;
-    let fotoBisnis = `/media/${data[0].fields.gambar_usaha}`;
-    
     let informasiUMKM = `
                 <li><strong>Domisili</strong>: ${data[0].fields.domisili}</li>
                 <li><strong>Produk/Jasa</strong>: ${data[0].fields.produk_jasa}</li>
@@ -12,8 +9,6 @@ const getUMKM = () => {
     let deskripsi = ` ${data[0].fields.deskripsi} `;
     
     document.getElementById("merek-bisnis").innerHTML = merekBisnis;
-    document.getElementById("foto-logo").innerHTML = fotoLogo;
-    document.getElementById("foto-bisnis").src = fotoBisnis;
     document.getElementById("informasi-umkm").innerHTML = informasiUMKM;
     document.getElementById("deskripsi").innerHTML = deskripsi;
   });
