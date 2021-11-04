@@ -12,6 +12,9 @@
         </style>
     </head>
     <body>
+        {% if user.is_authenticated %}
+        <p class="p20px">Hello, {{request.user}}</p>
+        {% endif %}
         <h1>YukInvest</h1>
         <p>YukInvest merupakan platform yang menyediakan layanan berinvestasi yang menghubungkan para investor dengan berbagai jenis UMKM di Indonesia. YukInvest dapat memberikan bantuan untuk mendorong masyarakat Indonesia untuk berinvestasi kepada UMKM demi memajukan perekonomian Indonesia.</p>
     </body>

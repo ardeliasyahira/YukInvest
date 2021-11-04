@@ -19,12 +19,13 @@ import homepage.urls as homepage
 import pendanaan.urls as pendanaan
 import infoumkm.urls as infoumkm
 import profil.urls as profil
+import users.urls as users
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
     path('info/', include(infoumkm)),
-    path('profil/', include(profil))
-
+    path('profil/', include(profil)),
+    path('users/', include(users))
 ]
