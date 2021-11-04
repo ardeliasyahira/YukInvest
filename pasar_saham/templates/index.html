@@ -33,20 +33,17 @@ Pasar Saham {% endblock %}
     <div class="pasar_container mx-auto" style="padding: 0px 30px 0px 30px; justify-content: center">
         <div class="searchbar" style="display: flex;justify-content: center; margin: 30px auto 30px;">
             <div class="searchbar-form">
+                <img src="https://i.ibb.co/3z36R1v/Group-36.png" style="width: 20px; height: 20px"/>
                 <form id="searchbar-input" method="POST">
                     {% csrf_token %}
-                    <input type="text" class="form-control" id="textSearch" name="textSearch" placeholder="Search UMKM">
+                    <input type="text" class="form-control" id="textSearch" name="textSearch"  placeholder="Search UMKM">
                 </form>
             </div>
         </div>
-        {% if umkm != null %}
         <div class="row" id="replaceable-content" style="display: flex; width: auto; justify-content: center;">
             <!-- card -->
             {% include 'search.html' %}
         </div>
-        {% else %}
-        <h2 style="text-align: center">Belum ada saham tersedia di pasar</h2>
-        {% endif %}
     </div>
 </div>
 {% endblock content %}

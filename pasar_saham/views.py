@@ -9,7 +9,7 @@ def index(request):
     url_param = request.GET.get("q")
 
     if url_param:
-        umkms = UMKM.objects.filter(merek_bisnis__icontains=url_param)
+        umkms = UMKM.objects.filter(saham_umkm__icontains=url_param)
     else:
         umkms = UMKM.objects.all()
 
@@ -27,4 +27,3 @@ def index(request):
 def detail(request, pk):
     umkm = UMKM.objects.get(merek_bisnis=pk)
     return render(request, 'detail.html', {'detail_umkm': umkm})
-

@@ -5,6 +5,4 @@ from .views import *
 urlpatterns = [
     path('', index, name='index'),
     path('<str:pk>/', detail, name='detailsaham'),
-    # path('search', index, name='search'),
-    path('search/', search, name='searchbar'),
 ]
