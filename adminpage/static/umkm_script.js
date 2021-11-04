@@ -6,10 +6,10 @@ const getUmkms = () => {
     for (let i = 0; i < data.length; i++) {
       html += `
       <tr>
-        <th scope="row">${i + 1}</th>
-        <td>${data[i].fields.merek_bisnis}</td>
-        <td>${data[i].fields.domisili}</td>
-        <td>${data[i].fields.produk_jasa}</td>
+        <th scope="row" class="align-middle">${i + 1}</th>
+        <td class="align-middle">${data[i].fields.merek_bisnis}</td>
+        <td class="align-middle">${data[i].fields.domisili}</td>
+        <td class="align-middle">${data[i].fields.produk_jasa}</td>
         <td class="d-flex justify-content-center align-items-center">`;
         
       if (data[i].fields.status == false){

@@ -1,11 +1,14 @@
 {% load static %}
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/adminpage/">UMKM</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/adminpage/users-db/">User</a>
-  </li>
-</ul>
-<br>
+<nav class="d-flex justify-content-center align-items-center">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <a href="/adminpage/">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+    UMKM</button>
+  </a>
+  <a href="/adminpage/users-db">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+    Users</button>
+  </a>
+  </div>
+</nav>

@@ -6,9 +6,9 @@ const getUsers = () => {
       for (let i = 0; i < data.length; i++) {
         html += `
         <tr>
-          <th scope="row">${i + 1}</th>
-          <td>${data[i].fields.nama_depan} ${data[i].fields.nama_belakang}</td>
-          <td>${data[i].fields.kotakabu}</td>
+          <th class="align-middle" scope="row">${i + 1}</th>
+          <td class="align-middle">${data[i].fields.nama_depan} ${data[i].fields.nama_belakang}</td>
+          <td class="align-middle">${data[i].fields.kotakabu}</td>
           <td class="d-flex justify-content-center align-items-center">
             <a href="/adminpage/delete-user/${data[i].pk}">
               <button class="btn btn-danger">delete</button>
