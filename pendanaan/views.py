@@ -10,6 +10,10 @@ def index(request):
     return render(request, "pendanaan/index_pendanaan.html")
 
 # @login_required(login_url="")
+def view_umkm(request):
+    return render(request, "pendanaan/view_umkm.html")
+
+# @login_required(login_url="")
 def get_umkm(request):
     umkm = UMKM.objects.all()
     umkm_json = serializers.serialize("json", umkm)
@@ -19,12 +23,12 @@ def get_umkm(request):
 def add_umkm(request):
     form = UMKMForm()
     if request.method == "POST":
-        data = request.POST.dict()
+        # data = request.POST.dict()
         # data["user"] = request.user
-        form = UMKMForm(data, request.FILES)
+        form = UMKMForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("") #
+            return redirect("pendanaan:view_umkm")
     context = {"form": form}
     return render(request, "pendanaan/add_umkm.html", context)
 
