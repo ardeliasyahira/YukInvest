@@ -25,7 +25,9 @@ def get_user(request):
 
 def validate_umkm(request, umkm_id):
     try:
-        UMKM.objects.get(id=umkm_id).validate_status()
+        umkm = UMKM.objects.get(id=umkm_id)
+        umkm.status = True
+        umkm.save()
     except Exception as e:
         print(e)
     finally:
@@ -33,7 +35,9 @@ def validate_umkm(request, umkm_id):
 
 def invalidate_umkm(request, umkm_id):
     try:
-        UMKM.objects.get(id=umkm_id).invalidate_status()
+        umkm = UMKM.objects.get(id=umkm_id)
+        umkm.status = False
+        umkm.save()
     except Exception as e:
         print(e)
     finally:

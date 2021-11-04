@@ -92,13 +92,7 @@ class UMKM(models.Model):
 
     dana_terkumpul = 0
     jumlah_investor = 0
-    status = False
-
-    def validate_status(self):
-        self.status = True
-
-    def invalidate_status(self):
-        self.status = False
+    status = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.merek_bisnis} {self.status}"
