@@ -287,20 +287,34 @@ input[type=text]:placeholder {
         </div>
     
         <!-- Login Form -->
-        <form method="POST">
-          {% csrf_token %}
+        <h1>Sign In</h1>
+          <form action="{% url 'users:login' %}" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        <!-- <form method="POST">
+          {% csrf_token %} -->
           <!-- {{form.nama}}
           {{form.password}} -->
           <!-- <input type="text"  id = '' class="fadeIn second" name="login" placeholder="login" > -->
-          <div class="fadeIn second" name="login">
+          <!-- <div class="fadeIn second" name="login">
             {{ form.nama }}
-          </div>
+          </div> -->
           <!-- <input type="text"  id = '' class="fadeIn third" name="login" placeholder="password" >  -->
-          <div class="fadeIn third" name="login">
+          <!-- <div class="fadeIn third" name="login">
             {{ form.password }}
           </div>
           <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
+        </form> -->
     
       </div>
     </div>
