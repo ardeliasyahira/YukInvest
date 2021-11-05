@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UMKM(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     ACEH = 'Aceh'
     SUMATERA_UTARA = 'Sumatera Utara'
@@ -82,7 +82,7 @@ class UMKM(models.Model):
 	choices = PILIHAN_DOMISILI,
 	default = ACEH
     )
-    # 
+    
     produk_jasa = models.CharField(max_length=30)
     saham_umkm = models.CharField(max_length=30)
     pendanaan_dibutuhkan = models.IntegerField()
@@ -90,7 +90,6 @@ class UMKM(models.Model):
     logo_usaha = models.ImageField(upload_to='Logo UMKM/')
     gambar_usaha = models.ImageField(upload_to='Foto UMKM/')
     ringkasan_perusahaan = models.FileField(upload_to='Ringkasan UMKM/')
-
     status = models.BooleanField(default=False)
 
     def __str__(self):
