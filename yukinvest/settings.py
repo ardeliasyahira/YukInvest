@@ -38,10 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # buat string formatting
+    'django.contrib.humanize',
     'homepage',
     'pendanaan',
     'infoumkm',
     'profil',
+    'users',
+    'pasar_saham'
 ]
 
 MIDDLEWARE = [
@@ -138,4 +142,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add static root for unit test
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

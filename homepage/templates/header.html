@@ -1,0 +1,26 @@
+{% load static %}
+{% block css %} 
+<link href="{% static 'header.css' %}" rel="stylesheet" type="text/css">
+{% endblock css %}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+            <b class="navbar-brand" href="">Yuk Invest!</b>
+            <ul class="navbar-nav">
+                <div class="navbar-nav">
+                    <a class="nav-link option" href="">Pasar Saham</a>
+                    <a class="nav-link option" href="">Daftar UMKM</a>
+                    <a class="nav-link option" href="">Pendanaan</a>
+                </div>
+                    <button id="tombol" type="button" class="btn btn-light" href="">
+                        Masuk
+                    </button>
+                    <button id="tombol2" type="button" class="btn btn-warning" href="">
+                        Daftar
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="justify-content-end"></div>
+    </nav>
+</header>

@@ -1,0 +1,184 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title> Profile - YukInvest </title>
+                                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='' rel='stylesheet'>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <style>body {
+    background: rgba(92, 122, 234, 0.28);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #5571DA;
+}
+
+.profile-button {
+    background: #5C7AEA;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #3A61F3;
+}
+
+.profile-button:focus {
+    background: #3A61F3;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #3A61F3;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #3A61F3;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+</style>
+    </head>
+    <body oncontextmenu='return false' class='snippet-body'>
+    <div class="container rounded bg-white mt-5 mb-5">
+    <form name = "Profil" method = 'POST'>
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3 border-right">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span> </span></div>
+                </div>
+                <div class="col-md-5 border-right">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Data Diri</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label for = "namadepan" class="labels">Nama Depan</label>
+                                <div class = "namadepan">
+                                    {{ form.namadepan }}
+                                </div>
+                                <div class = "namadepan">
+                                    <input type="text" class="form-control" placeholder="first name" name= "{{ forms.namadepan }}" id="id_{{ forms.namadepan }}"
+                                    value="{{ forms.namadepan }}"> 
+                                </div>   
+                            </div>
+                            <div class="col-md-6"><label for = "namabelakang" class="labels">Nama Belakang</label>
+                                <div class = "namabelakang">
+                                    {{ form.namabelakang }}
+                                </div>
+                                <div class = "namabelakang">
+                                    <input type="text" class="form-control" placeholder="last name" name= "{{ forms.namabelakang }}" id="id_{{ forms.namabelakang }}"
+                                    value="{{ forms.namabelakang }}">   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 py-5">
+                            <div class="mb-3">
+                                <div class="col-md-12"><label for = "deskripsibisnis" class="labels">Deskripsi Bisnis</label>
+                                    <div class = "deksripsibisnis">
+                                        {{ form.deskripsibisnis }}
+                                    </div>
+                                    <div class = "deskripsibisnis">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsibisnis }}" id="id_{{ forms.deskripsibisnis }}"
+                                        value="{{ forms.deskripsibisnis }}"></textarea> 
+                                    </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="col-md-12"><label for = "deskripsisumber" class="labels">Deskripsi Sumber Pendapatan</label>
+                                    <div class = "deskripsisumber">
+                                        {{ form.deskripsisumber }}
+                                    </div>
+                                    <div class = "deskripsisumber" >
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsisumber }}" id="id_{{ forms.deskripsisumber }}"
+                                        value="{{ forms.deskripsisumber }}"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Dokumen</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label for = "sid" class="labels">No. SID</label><input  type="text" class="form-control" placeholder="No. SID" name= "{{ forms.sid }}" id="id_{{ forms.sid }}"
+                                value="{{ forms.sid }}"></div>
+                            <div class="col-md-6"><label for = "noktp" class="labels">No. KTP</label><input  type="text" class="form-control" value="" placeholder="No.KTP" name= "{{ forms.noktp }}" id="id_{{ forms.noktp }}"
+                                value="{{ forms.noktp }}"></div>
+                        </div>
+                    </div>
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Bank</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div name = "namabank">
+                                {{ form.namabank }}
+                            </div>
+                            <div name = "namabank" class="col-md-6"><label class="labels">Nama Bank</label><input  type="text" class="form-control" placeholder="Nama Bank" name= "{{ forms.namabank }}" id="id_{{ forms.namabank }}"
+                                value="{{ forms.namabank }}"></div>
+                            <div name = "norekening">
+                                {{ form.norekening }}
+                            </div>
+                            <div name = "norekening" class="col-md-6"><label class="labels">Nomor Rekening</label><input  type="text" class="form-control" placeholder="Nomor Rekening" name= "{{ forms.norekening}}" id="id_{{ forms.norekening }}"
+                                value="{{ forms.norekening}}"></div>
+                            <div name = "namapemilik">
+                                {{ form.namapemilik }}
+                            </div>
+                            <div name = "namapemilik" class="col-md-6"><label class="labels">Nama Pemilik Rekening</label><input  type="text" class="form-control" placeholder="Nama Pemilik Rekening" name= "{{ forms.namapemilik}}" id="id_{{ forms.namapemilik}}"
+                                value="{{ forms.namapemilik}}"></div>
+                        </div>
+                    </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                </div>
+            </div>
+    </form>
+</div>
+</div>
+</div>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+<script type='text/javascript'>
+    document.getElementById('sub-btn').addEventListener('click', function(e){
+            e.preventDefault()
+          })
+          $('#sub-btn').click(function(e){
+            namadepan = $('#id_namadepan').val()
+            namabelakang = $('#id_namabelakang').val()
+            deskripsibisnis = $('#id_deskripsibisnis').val()
+            deskripsisumber = $('#id_deskripsisumber').val()
+            sid = $('#id_sid').val()
+            noktp = $('#id_noktp').val()
+            namabank = $('#id_namabank').val()
+            norekening = $('#id_norekening').val()
+            namapemilik = $('#id_namapemilik').val()
+            $.ajax({
+              type: 'POST',
+              url: `/profil/`,
+              data: {
+                'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+                'namadepan': tittle,
+                'namabelakang' : namabelakang,
+                'deskripsibisnis' : deskripsibisnis, 
+                'deskripsisumber' : deskripsisumber,
+                'sid' : sid,
+                'noktp': noktp,
+                'namabank' : namabank,
+                'norekening' : norekening,
+                'namapemilik' : namapemilik
+              },
+              success: function (result) {
+                $("#all-message").empty()
+                getAllMessage()
+              },
+            });
+          }); 
+</script>
+                            </body>
+                            </html>

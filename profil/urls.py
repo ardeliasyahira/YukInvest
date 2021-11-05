@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import my_view
+from . import views
 
 app_name = 'profil'
 
 urlpatterns = [
-    path('', my_view, name='my-view')
+    path('', views.datadiri_form, name = '')
 ]
