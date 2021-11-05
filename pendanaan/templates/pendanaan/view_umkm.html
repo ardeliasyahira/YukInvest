@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+
 {% load static %}
-<head>
+
+{% block title %}Ajuan Pendanaan{% endblock %}
+
+{% block meta %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Ajuan Pendanaan</title> 
   <meta content="" name="description">
   <meta content="" name="keywords">
+{% endblock meta %}
+
+{% block css %} 
 
   <!-- Favicons -->
   <link href={% static "pendanaan/img/favicon.jpg" %} rel="icon">
@@ -18,7 +22,7 @@
 
   <!-- Vendor CSS Files -->
   <link href={% static "pendanaan/vendor/aos/aos.css" %} rel="stylesheet">
-  <link href={% static "pendanaan/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet"> 
+  <link href={% static "pendanaan/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
   <link href={% static "pendanaan/vendor/bootstrap-icons/bootstrap-icons.css" %} rel="stylesheet">
   <link href={% static "pendanaan/vendor/boxicons/css/boxicons.min.css" %} rel="stylesheet">
   <link href={% static "pendanaan/vendor/glightbox/css/glightbox.min.css" %} rel="stylesheet">
@@ -28,12 +32,10 @@
   <link href={% static "pendanaan/css/style.css" %} rel="stylesheet">
   <link href={% static "pendanaan/css/view_umkm.css" %} rel="stylesheet">
 
-  <!--JQuery-->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+{% endblock css %}
 
-</head>
+{% block content %}
 
-<body>
   <main id="main" data-aos="fade-up">
 
 
@@ -99,7 +101,4 @@
   <!-- Template Main JS File-->
   <script src={% static "pendanaan/js/script.js" %}></script>
 
-
-</body>
-
-</html>
+{% endblock content %}

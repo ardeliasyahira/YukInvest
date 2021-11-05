@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+
 {% load static %}
-<head>
+
+
+{% block title %}Pendanaan{% endblock %}
+
+  {% block meta %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Pendanaan</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  {% endblock meta %}
+
+  {% block css %} 
 
   <!-- Favicons -->
   <link href={% static "pendanaan/img/favicon.jpg" %} rel="icon">
@@ -27,9 +32,10 @@
   <!-- Template Main CSS File -->
   <link href={% static "pendanaan/css/style.css" %} rel="stylesheet">
 
-</head>
+  {% endblock css %}
 
-<body>
+  {% block content %}
+
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
@@ -176,6 +182,4 @@
   <!-- Template Main JS File -->
   <script src={% static "pendanaan/js/main.js" %}></script>
 
-</body>
-
-</html>
+{% endblock content %}
