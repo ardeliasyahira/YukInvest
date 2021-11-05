@@ -1,0 +1,275 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a:hover {
+    color: #545454 !important;
+}
+
+h5 {
+    margin-top: 20px;
+    font-family: Poppins;
+    font-weight: bolder;
+}
+
+span {
+    font-family: "Montserrat", "sans-serif";
+}
+
+.detail-bisnis-title{
+    display: block;
+    height: 180px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,.05);
+    width: 100%;
+}
+
+.detail-bisnis-title-container {
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bisnis-desc {
+    margin-top: 38px;
+}
+
+.bisnis-logo {
+    text-align: center;
+    margin-top: 38px;
+    width: 150px;
+    height: 150px;
+}
+
+.img-bisnis-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    --bs-gutter-x: 0;
+}
+
+.img-bisnis-logo-container {
+    display: table;
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    border: 1px solid #e6e6f0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.container-fluid{
+    max-width: 100%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.img-detail-bisnis {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 5px;
+    box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.25);
+}
+
+.col-md-6{
+    position: relative;
+    width: 427px;
+}
+
+.bisnis-type-pendanaan {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: .4px;
+    color: #0f1019;
+    margin-bottom: 30px;
+    margin-top: 4px;
+    text-align: left;
+}
+
+.bisnis-type-pendanaan-title, .bisnis-type-deskripsi-title {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .2px;
+    color: #6d6d6d;
+    margin-bottom: 10px;
+    margin-top: revert;
+}
+
+.bisnis-type-deskripsi {
+
+}
+
+.detail-bisnis-main__funds-buttons {
+    display: flex;
+}
+
+.button-unduh-pdf{
+    float: left;
+    font-size: 14px;
+    margin-right: 12px;
+    line-height: 1.57;
+    letter-spacing: .4px;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 1px rgba(65,104,184,.2);
+    background-image: linear-gradient(270deg,#5c7aea,#14279b);
+    border: none;
+    color: white;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.button-beli {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    margin-right: 12px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #3d56b2;
+    color: #3d56b2;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", "sans-serif";
+    text-align: center;
+}
+
+.button-whatsapp {
+    display: flex;
+    min-width: 50px;
+    max-width: 50px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #63b160;
+    border: 1px solid #63b160;
+    color: #fff;
+    font-weight: 400;
+    -o-object-fit: contain;
+    object-fit: contain;
+    cursor: pointer;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-bisnis-buy {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    width: 60%;
+    border-radius: 8px;
+    border: 1px dashed #3D56B2;
+    background-color: #f3f6f8;
+}
+
+.detail-bisnis-buy__input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.saham-quantity-input {
+    text-align: center;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+}
+
+.saham-total-harga {
+    color: #0f1019!important;
+    font-size: 20px!important;
+    font-weight: 900!important;
+    letter-spacing: .4px!important;
+    line-height: 30px!important;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.saham-total-imbal-balik, .saham-total-persentase {
+    color: #4c9a4c!important;
+    font-size: 20px!important;
+    font-weight: 900!important;
+    letter-spacing: .4px!important;
+    line-height: 30px!important;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.saham-total-harga-box, .saham-total-imbal-box, .saham-total-persentase-box {
+    border-radius: 8px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    outline: none;
+    margin: auto;
+    font-size: 28px;
+}
+
+.btn-beli-saham-wrap {
+    text-align: center;
+}
+
+.btn-beli-saham {
+    margin-right: 12px;
+    line-height: 1.57;
+    letter-spacing: .4px;
+    width: 35%;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 1px rgba(65,104,184,.2);
+    /*background-image: linear-gradient(270deg,#5e82b8,#3D56B2, #14279b);*/
+    background-image: linear-gradient(270deg,#5c7aea,#14279b);
+    border: none;
+    color: white;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.inc-ammount-button, .dec-ammount-button {
+    position: Relative;
+    font-size: 37px;
+    line-height: 37px;
+    left: 12px;
+    color: #3d56b2;
+    padding: 0;
+    border: none;
+    background: none;
+    float: left;
+}
+
+.amount-button-outer {
+    width: 40px;
+    height: 40px;
+    border-radius: 24px;
+    border: 1px solid #3d56b2;
+    margin: 4px 10px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    text-align: -webkit-auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
