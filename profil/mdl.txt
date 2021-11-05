@@ -1,0 +1,8 @@
+Models yang harus dibuat: 
+Ke login:
+
+if identitas udh ada 
+ke profil 
+
+if identitas gaada 
+edit profile

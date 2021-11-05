@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% extends "CP1.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+{% block title %}
+
+Pasar Saham {% endblock %}
+
+{% block css %}
+<link href="{% static 'index.css' %}" rel="stylesheet" type="text/css">
+{% endblock css %}
+
+{% load humanize %}
+{% block content %}
+<div id="pasar">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img
+                        src="https://i.ibb.co/PQ4tmHt/background-bizhare.png"
+                        class="d-block w-100"
+                        alt="..."
+                />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="font-size: 48px; font-family: Poppins; font-weight: bold">Pasar Saham UMKM</h5>
+                    <p style="font-size: 16px; font-family: Poppins; font-weight: bold">Yuk, mulai investasi bisnis sekarang juga!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pasar_container mx-auto" style="padding: 0px 30px 0px 30px; justify-content: center">
+        <div class="searchbar" style="display: flex;justify-content: center; margin: 30px auto 30px;">
+            <div class="searchbar-form">
+                <img src="https://i.ibb.co/3z36R1v/Group-36.png" style="width: 20px; height: 20px"/>
+                <form id="searchbar-input" method="POST">
+                    {% csrf_token %}
+                    <input type="text" class="form-control" id="textSearch" name="textSearch"  placeholder="Search UMKM">
+                </form>
+            </div>
+        </div>
+        <div class="row" id="replaceable-content" style="display: flex; width: auto; justify-content: center;">
+            <!-- card -->
+            {% include 'search.html' %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const user_input = $("#textSearch")
+        const umkms_div = $('#replaceable-content')
+        const endpoint = '/pasarsaham/'
+        const delay_in_ms = 200
+        let scheduled_function = false
+
+        let ajax_call = function (endpoint, request_parameters) {
+            $.getJSON(endpoint, request_parameters)
+                .done(response => {
+                    // fade out the artists_div, then:
+                    umkms_div.fadeTo('slow', 0).promise().then(() => {
+                        // replace the HTML contents
+                        umkms_div.html(response['html_from_view'])
+                        // fade-in the div with new contents
+                        umkms_div.fadeTo('slow', 1)
+                    })
+                })
+        }
+
+        user_input.on('keyup', function () {
+            const request_parameters = {
+                q: $(this).val()
+            }
+
+            if (scheduled_function) {
+                clearTimeout(scheduled_function)
+            }
+
+            scheduled_function = setTimeout(ajax_call, delay_in_ms, endpoint, request_parameters)
+        })
+    });
+</script>
+{% endblock javascript %}

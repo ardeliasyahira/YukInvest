@@ -1,0 +1,24 @@
+{% load humanize %}
+{% for umkm in umkm %}
+<div class="card">
+    <a href="{% url 'detailsaham' umkm.merek_bisnis %}">
+        <!--Card image-->
+        <div class="card_image overlay text-center">
+            <img class="card-img-top" src="{{ umkm.gambar_usaha.url }}" alt="gambar umkm">
+        </div>
+        <!--Card Body-->
+        <div class="card-body card-body-cascade">
+            <!--Card Title-->
+            <h4 class="card-title"><strong>{{umkm.saham_umkm}}</strong></h4>
+            <!-- Card Domisili-->
+            <p class="card-domisili">{{umkm.merek_bisnis}}</p>
+            <hr>
+            <!--Card footer-->
+            <div class="card-footer">
+                <p>Nilai Bisnis</p>
+                <p>Rp. {{umkm.pendanaan_dibutuhkan|intcomma}}</p>
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
