@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href={% static "pendanaan/img/favicon.jpg" %} rel="icon">
-  <link href={% static "pendanaan/img/apple-touch-icon.jp" %} rel="apple-touch-icon">
+  <link href={% static "pendanaan/img/apple-touch-icon.jpg" %} rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -37,8 +37,8 @@
         <h3>
           Pengisian Formulir Pengajuan Pendanaan
         </h3>
-        <form action="" enctype="multipart/form-data" method="POST" id="form-umkm">
-          {% csrf_token %}
+        <form action="" method="POST" id="form-umkm" enctype="multipart/form-data">
+        {% csrf_token %}
   	  <div class="row mb-3">
     	    <label for="merek_bisnis" class="col-sm-2 col-form-label">Merek Bisnis</label>
     	    <div class="col-sm-10">
@@ -55,6 +55,12 @@
     	    <label for="produk_jasa" class="col-sm-2 col-form-label">Produk/Jasa</label>
     	    <div class="col-sm-10">
       	    {{ form.produk_jasa }}
+    	    </div>
+  	  </div>
+  	   <div class="row mb-3">
+    	    <label for="saham_umkm" class="col-sm-2 col-form-label">Saham UMKM</label>
+    	    <div class="col-sm-10">
+      	    {{ form.saham_umkm }}
     	    </div>
   	  </div>
   	  <div class="row mb-3">
@@ -87,21 +93,12 @@
       	    {{ form.ringkasan_perusahaan }}
     	    </div>
   	  </div>
-  	<button type="submit" class="btn btn-primary">Submit</button>
+  	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
       </div>
     </section>
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer =======
-  <footer id="footer">
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>BizLand</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

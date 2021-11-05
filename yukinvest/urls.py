@@ -22,12 +22,18 @@ import pendanaan.urls as pendanaan
 import profil.urls as profil
 import infoumkm.urls as infoumkm
 import adminpage.urls as adminpage
+import users.urls as users
+import pasar_saham.urls as pasarsaham
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
+    path('info/', include(infoumkm)),
     path('profil/', include(profil)),
     path('adminpage/', include(adminpage)),
-    path('daftarumkm/', include(infoumkm))
+    path('daftarumkm/', include(infoumkm)),
+    path('users/', include(users)),
+    path('daftarumkm/', include(infoumkm)),
+    path('pasarsaham/', include(pasarsaham)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
