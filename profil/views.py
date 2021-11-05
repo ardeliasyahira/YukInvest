@@ -48,10 +48,10 @@ class UserEdit(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-def model_list(request):
-    profil = EditProfil.objects.all() # Mengambil seluruh Note yang ada di database
-    response = {'edit': edit} #notes: query set (list berisi model) --> bakal dimasukkan ke lab_2.html
-    return render(request, 'bbbootstrap-snippet.html', response)
+# def model_list(request):
+#     profil = EditProfil.objects.all() # Mengambil seluruh Note yang ada di database
+#     response = {'edit': edit} #notes: query set (list berisi model) --> bakal dimasukkan ke lab_2.html
+#     return render(request, 'bbbootstrap-snippet.html', response)
 
 
 
