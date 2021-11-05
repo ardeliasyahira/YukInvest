@@ -6,7 +6,7 @@ from .forms import UmkmForm
 
 # Create your views here.
 def daftarumkm(request):
-    umkms = UMKM.objects.all().values()
+    umkms = UMKM.objects.all()
     response = {'umkms': umkms}
     return render(request, 'daftarumkm.html', response)
 
