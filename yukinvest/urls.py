@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 import homepage.urls as homepage
 import pendanaan.urls as pendanaan
-import infoumkm.urls as infoumkm
 import profil.urls as profil
+import infoumkm.urls as infoumkm
+import adminpage.urls as adminpage
 import users.urls as users
+import pasar_saham.urls as pasarsaham
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +31,9 @@ urlpatterns = [
     path('pendanaan/', include(pendanaan)),
     path('info/', include(infoumkm)),
     path('profil/', include(profil)),
-    path('users/', include(users))
-]
+    path('adminpage/', include(adminpage)),
+    path('daftarumkm/', include(infoumkm)),
+    path('users/', include(users)),
+    path('daftarumkm/', include(infoumkm)),
+    path('pasarsaham/', include(pasarsaham)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

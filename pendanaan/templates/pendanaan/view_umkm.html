@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Ajuan Pendanaan{% endblock %}
+
+{% block meta %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{% endblock meta %}
+
+{% block css %} 
+
+  <!-- Favicons -->
+  <link href={% static "pendanaan/img/favicon.jpg" %} rel="icon">
+  <link href={% static "pendanaan/img/apple-touch-icon.jpg" %} rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={% static "pendanaan/vendor/aos/aos.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/vendor/bootstrap-icons/bootstrap-icons.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/vendor/boxicons/css/boxicons.min.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/vendor/glightbox/css/glightbox.min.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/vendor/swiper/swiper-bundle.min.css" %} rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={% static "pendanaan/css/style.css" %} rel="stylesheet">
+  <link href={% static "pendanaan/css/view_umkm.css" %} rel="stylesheet">
+
+{% endblock css %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-up">
+
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div id="merek-bisnis" class="d-flex justify-content-between align-items-center">
+          
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+
+
+           <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+		<div class="swiper-slide"><img src="/media/{{ obj.logo_usaha}}" style="max-height:1000px;;display: block;margin-left: auto;margin-right: auto;width: 50%;"></div>
+		<div class="swiper-slide"> <img src="/media/{{ obj.gambar_usaha }}" style="max-height:1000px;display: block;margin-left: auto;margin-right: auto;width: 50%;"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Informasi UMKM</h3>
+              <ul id="informasi-umkm">
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <p id="deskripsi"></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static "pendanaan/vendor/aos/aos.js" %}></script>
+  <script src={% static "pendanaan/vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
+  <script src={% static "pendanaan/vendor/glightbox/js/glightbox.min.js" %}></script>
+  <script src={% static "pendanaan/vendor/isotope-layout/isotope.pkgd.min.js" %}></script>
+  <script src={% static "pendanaan/vendor/php-email-form/validate.js" %}></script>
+  <script src={% static "pendanaan/vendor/purecounter/purecounter.js" %}></script>
+  <script src={% static "pendanaan/vendor/swiper/swiper-bundle.min.js" %}></script>
+  <script src={% static "pendanaan/vendor/waypoints/noframework.waypoints.js" %}></script>
+
+  <!-- Template Main JS File-->
+  <script src={% static "pendanaan/js/script.js" %}></script>
+
+{% endblock content %}

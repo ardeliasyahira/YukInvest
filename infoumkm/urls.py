@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import index
+from django.conf.urls import url
+from .views import add_umkm, daftarumkm, daftarumkm_detail, daftarumkm_detail_popup
 
 urlpatterns = [
-    path('', index, name='index')
+    path('', daftarumkm, name='daftarumkm'),
+    path('add_umkm/', add_umkm, name="add_umkm"),
 ]
