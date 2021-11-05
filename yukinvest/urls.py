@@ -15,18 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 import homepage.urls as homepage
-import pasar_saham.urls as pasar_saham
 import pendanaan.urls as pendanaan
+import profil.urls as profil
 import infoumkm.urls as infoumkm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage)),
     path('pendanaan/', include(pendanaan)),
-# <<<<<<< HEAD
-    path('pasarsaham/', include(pasar_saham)),
-# =======
-    path('info/', include(infoumkm)),
-# >>>>>>> d80c8fcd999f5f4274f82dc6c48381cc3db6d6d8
-]
+    path('profil/', include(profil)),
+    path('daftarumkm/', include(infoumkm))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

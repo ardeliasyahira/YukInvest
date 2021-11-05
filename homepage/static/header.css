@@ -1,0 +1,43 @@
+.navbar-brand {
+    color: white;
+}
+.navbar-nav {
+    color: white;
+}
+#tombol {
+    color: black;
+    margin-left: 0,2rem;
+    margin-right: 0,2rem;
+}
+
+#tombol2 {
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: black;
+    text-shadow: 40px;
+}
+
+.option {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.container-fluid {
+    overflow: hidden;
+    background-color: #3D56B2;
+    padding: 10px 10px;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.navbar {
+    padding: 0 !important;
+}
+
