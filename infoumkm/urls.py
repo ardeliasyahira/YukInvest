@@ -4,4 +4,5 @@ from .views import add_umkm, daftarumkm, daftarumkm_detail, daftarumkm_detail_po
 
 urlpatterns = [
     path('', daftarumkm, name='daftarumkm'),
+    path('add_umkm/', add_umkm, name="add_umkm"),
 ]
