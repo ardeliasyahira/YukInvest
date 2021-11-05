@@ -61,25 +61,45 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-6"><label for = "namadepan" class="labels">Nama Depan</label>
-                                <input type="text" class="form-control" placeholder="first name" name= "{{ forms.namadepan }}" id="id_{{ forms.namadepan }}"
-                                value="{{ forms.namadepan }}">
+                                <div class = "namadepan">
+                                    {{ form.namadepan }}
+                                </div>
+                                <div class = "namadepan">
+                                    <input type="text" class="form-control" placeholder="first name" name= "{{ forms.namadepan }}" id="id_{{ forms.namadepan }}"
+                                    value="{{ forms.namadepan }}"> 
+                                </div>   
                             </div>
                             <div class="col-md-6"><label for = "namabelakang" class="labels">Nama Belakang</label>
-                                <input type="text" class="form-control" placeholder="last name" name= "{{ forms.namabelakang }}" id="id_{{ forms.namabelakang }}"
-                                value="{{ forms.namabelakang }}">
+                                <div class = "namabelakang">
+                                    {{ form.namabelakang }}
+                                </div>
+                                <div class = "namabelakang">
+                                    <input type="text" class="form-control" placeholder="last name" name= "{{ forms.namabelakang }}" id="id_{{ forms.namabelakang }}"
+                                    value="{{ forms.namabelakang }}">   
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 py-5">
                             <div class="mb-3">
                                 <div class="col-md-12"><label for = "deskripsibisnis" class="labels">Deskripsi Bisnis</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsibisnis }}" id="id_{{ forms.deskripsibisnis }}"
-                                value="{{ forms.deskripsibisnis }}"></textarea>
+                                    <div class = "deksripsibisnis">
+                                        {{ form.deskripsibisnis }}
+                                    </div>
+                                    <div class = "deskripsibisnis">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsibisnis }}" id="id_{{ forms.deskripsibisnis }}"
+                                        value="{{ forms.deskripsibisnis }}"></textarea> 
+                                    </div>
                             </div>
                             <div class="mb-3">
                                 <div class="col-md-12"><label for = "deskripsisumber" class="labels">Deskripsi Sumber Pendapatan</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsisumber }}" id="id_{{ forms.deskripsisumber }}"
-                                value="{{ forms.deskripsisumber }}"></textarea>
+                                    <div class = "deskripsisumber">
+                                        {{ form.deskripsisumber }}
+                                    </div>
+                                    <div class = "deskripsisumber" >
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name= "{{ forms.deskripsisumber }}" id="id_{{ forms.deskripsisumber }}"
+                                        value="{{ forms.deskripsisumber }}"></textarea>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -99,11 +119,20 @@
                             <h4 class="text-right">Bank</h4>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">Nama Bank</label><input  type="text" class="form-control" placeholder="Nama Bank" name= "{{ forms.namabank }}" id="id_{{ forms.namabank }}"
+                            <div name = "namabank">
+                                {{ form.namabank }}
+                            </div>
+                            <div name = "namabank" class="col-md-6"><label class="labels">Nama Bank</label><input  type="text" class="form-control" placeholder="Nama Bank" name= "{{ forms.namabank }}" id="id_{{ forms.namabank }}"
                                 value="{{ forms.namabank }}"></div>
-                            <div class="col-md-6"><label class="labels">Nomor Rekening</label><input  type="text" class="form-control" placeholder="Nomor Rekening" name= "{{ forms.norekening}}" id="id_{{ forms.norekening }}"
+                            <div name = "norekening">
+                                {{ form.norekening }}
+                            </div>
+                            <div name = "norekening" class="col-md-6"><label class="labels">Nomor Rekening</label><input  type="text" class="form-control" placeholder="Nomor Rekening" name= "{{ forms.norekening}}" id="id_{{ forms.norekening }}"
                                 value="{{ forms.norekening}}"></div>
-                            <div class="col-md-6"><label class="labels">Nama Pemilik Rekening</label><input  type="text" class="form-control" placeholder="Nama Pemilik Rekening" name= "{{ forms.namapemilik}}" id="id_{{ forms.namapemilik}}"
+                            <div name = "namapemilik">
+                                {{ form.namapemilik }}
+                            </div>
+                            <div name = "namapemilik" class="col-md-6"><label class="labels">Nama Pemilik Rekening</label><input  type="text" class="form-control" placeholder="Nama Pemilik Rekening" name= "{{ forms.namapemilik}}" id="id_{{ forms.namapemilik}}"
                                 value="{{ forms.namapemilik}}"></div>
                         </div>
                     </div>
