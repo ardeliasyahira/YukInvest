@@ -90,8 +90,6 @@ class UMKM(models.Model):
     gambar_usaha = models.ImageField(upload_to='Foto UMKM/')
     ringkasan_perusahaan = models.FileField(upload_to='Ringkasan UMKM/')
 
-    dana_terkumpul = 0
-    jumlah_investor = 0
     status = models.BooleanField(default=False)
 
     def __str__(self):

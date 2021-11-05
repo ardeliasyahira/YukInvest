@@ -1,7 +1,6 @@
 const getUmkms = () => {
   $.get("/adminpage/umkm-api/").done((data) => {
     let html = "";
-    // data = list of todo
   
     for (let i = 0; i < data.length; i++) {
       html += `

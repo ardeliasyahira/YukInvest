@@ -58,6 +58,3 @@ def delete_user(request, user_id):
         print(e)
     finally:
         return redirect("admin-page:user_index")
-
-def edit_user(request, user_id):
-    return
