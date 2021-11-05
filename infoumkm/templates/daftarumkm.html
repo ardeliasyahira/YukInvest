@@ -136,6 +136,7 @@ body {
     data-domisili="{{ umkm.domisili }}"
     data-deskripsi="{{ umkm.deskripsi }}"
     data-pendanaan="{{ umkm.pendanaan_dibutuhkan }}"
+    data-saham="{{ umkm.saham_umkm }}"
     data-investor="{{ umkm.jumlah_investor }}"
     data-logo="{{ umkm.logo_usaha }}"
     data-gambar="{{ umkm.gambar_usaha }}"
@@ -174,6 +175,10 @@ body {
           <h5>Dana dibutuhkan:</h5>
           <h5 id="umkm-pendanaan"></h5>
         </div>
+        <div class="modal-body">
+          <h5>Saham:</h5>
+          <h5 id="umkm-saham"></h5>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -190,6 +195,7 @@ body {
     $('#umkm-domisili').html($(this).data('domisili'));
     $('#umkm-deskripsi').html($(this).data('deskripsi'));
     $('#umkm-pendanaan').html($(this).data('pendanaan'));
+    $('#umkm-saham').html($(this).data('saham'));
     $('#umkm-investor').html($(this).data('investor'));
     $('#umkm-logo').src($(this).data('logo'));
     $('#umkm-gambar').src($(this).data('gambar'));
