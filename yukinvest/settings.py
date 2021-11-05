@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'pendanaan',
     'infoumkm',
     'profil',
+    'adminpage',
     'users',
-    'pasar_saham'
+    'pasar_saham',
 ]
 
 MIDDLEWARE = [
