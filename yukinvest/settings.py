@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'pendanaan',
     'infoumkm',
     'profil',
+    'users',
     'pasar_saham'
 ]
 

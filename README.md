@@ -5,7 +5,7 @@
 
 1. Alya Annissa Diyantari - 2006597595
 2. Ardelia Syahira Yudiva - 2006597216
-3. Balqis Naurah Hanifah - 2006597746
+3. Balqis Naurah Hanifah - 2006597746 *
 4. Favian Naufal - 2006597802
 5. Muhammad Tsaqib Ibadillah Wahid - 2006596983
 6. Nugraha Aktwovhiday Abdullah G -  2006596636
@@ -30,7 +30,7 @@ Usaha Mikro Kecil Menengah atau biasa disebut juga dengan UMKM, merupakan salah 
 ---
 
 ## Module
-1. Authentication Login (Sign In, Sign Up, Sign Out) (Balqis Naurah Hanifah)
+1. Authentication Login (Sign In, Sign Up, Sign Out) (Kelompok E08)
 2. Homepage + Navbar  (Alya Annissa)
 3. Pasar saham UMKM (Nurul Hanina Efendi)
 4. Pendanaan UMKM (Nugraha Aktwovhiday Abdullah G)
