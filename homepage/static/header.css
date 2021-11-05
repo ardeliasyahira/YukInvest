@@ -1,8 +1,8 @@
 .navbar-brand {
-    color: white;
+    color: white !important;
 }
 .navbar-nav {
-    color: white;
+    color: white !important;
 }
 #tombol {
     color: black;
@@ -11,17 +11,17 @@
 }
 
 #tombol2 {
-    color: white;
+    color: white !important;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
 a {
-    color: white;
+    color: white !important;
 }
 
 a:hover {
-    color: black;
+    color: black !important;
     text-shadow: 40px;
 }
 
