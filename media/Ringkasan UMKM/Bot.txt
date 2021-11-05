@@ -1,0 +1,13 @@
+https://medium.com/tkcbi/membuat-line-bot-dengan-python-33b85878ba40
+
+https://developers.line.biz/en/docs/messaging-api/building-bot/#confirm-webhook-behavior
+
+https://developers.line.biz/en/docs/messaging-api/building-sample-bot-with-heroku/#deploy-the-kitchensink-sample-bot-app
+
+https://page.line.biz/account-page/702757834182493/profile
+
+https://manager.line.biz/
+
+https://manager.line.biz/account/@928wbsfa/autoresponse
+
+https://developers.line.biz/console/channel/1656363841/messaging-api

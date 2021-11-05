@@ -1,68 +1,16 @@
 const getUMKM = () => {
   $.get("/pendanaan/api/").done((data) => {
-    let html = `
-
-
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>${data[0].fields.merek_bisnis}</h2>
-        </div>
-
-      </div>
-    </section><!-- Breadcrumbs Section -->
-
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-
-
-           <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="/media/${data[0].fields.logo_usaha}" style="max-height:1000px;height:auto;width:auto" alt="logo usaha">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="/media/${data[0].fields.gambar_usaha}" style="max-height:1000px;height:auto;width:auto" alt="gambar usaha">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Informasi UMKM</h3>
-              <ul>
+    let merekBisnis = `<h2>${data[0].fields.merek_bisnis}</h2>`;
+    let informasiUMKM = `
                 <li><strong>Domisili</strong>: ${data[0].fields.domisili}</li>
                 <li><strong>Produk/Jasa</strong>: ${data[0].fields.produk_jasa}</li>
                 <li><strong>Saham UMKM</strong>: ${data[0].fields.saham_umkm}</li>
-                <li><strong>Dana dibutuhkan</strong>: ${data[0].fields.pendanaan_dibutuhkan}</li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <p>
-                ${data[0].fields.deskripsi}
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
-     `;
-    document.getElementById("umkm-data").innerHTML = "";    
-    document.getElementById("umkm-data").innerHTML = html;
+                <li><strong>Dana dibutuhkan</strong>: ${data[0].fields.pendanaan_dibutuhkan}</li> `;
+    let deskripsi = ` ${data[0].fields.deskripsi} `;
+    
+    document.getElementById("merek-bisnis").innerHTML = merekBisnis;
+    document.getElementById("informasi-umkm").innerHTML = informasiUMKM;
+    document.getElementById("deskripsi").innerHTML = deskripsi;
   });
 }
 
