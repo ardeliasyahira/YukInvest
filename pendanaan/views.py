@@ -11,20 +11,20 @@ def index(request):
 
 @login_required(login_url="users:login")
 def view_umkm(request):
-    obj = UMKM.objects.filter(request.user)
+    obj = UMKM.objects.filter(request.user).get(pk=1)
     obj_dict = {"obj": obj}
     return render(request, "pendanaan/view_umkm.html", obj_dict)
 
 @login_required(login_url="users:login")
 def get_umkm(request):
-    umkm = UMKM.objects.filter(request.user)
+    umkm = UMKM.objects.filter(request.user).get(pk=1)
     umkm_json = serializers.serialize("json", umkm)
     return HttpResponse(umkm_json, content_type="application/json")
 
 @login_required(login_url="users:login")
 def add_umkm(request):
     form = UMKMForm()
-    umkm = UMKM.objects.filter(request.user)
+    umkm = UMKM.objects.filter(request.user).get(pk=1)
     if umkm:
         return redirect("pendanaan:view_umkm")
     elif request.method == "POST":
