@@ -1,117 +1,14 @@
-# from django.shortcuts import render
+import json
 
-# # Create your views here.
-# from django.shortcuts import render, redirect, resolve_url
-# from django.contrib.auth import authenticate, login, logout
-# from django.contrib.auth.models import User 
-
-# from .forms import AuthForm
-
-# # Create your views here.
-# def user_login(request):
-#     # if (not request.user.is_anonymous):
-# 	#     return redirect(resolve_url('/'))
-
-#     form = AuthForm(request.POST or None)
-#     context = {
-#         'form': form,
-#         'isError': False,
-#         'Error': '',
-#     }
-
-#     if (request.method == "POST"):
-#         account = authenticate(
-#             username = request.POST['nama'],
-#             password = request.POST['password'],
-#         )
-
-#         if (account == None):
-#             context['isError'] = True
-#             context['Error'] = 'Autentikasi gagal'
-#             context['form'] = AuthForm()
-#             return render(request, 'login.html', context)
-#         else:
-#             login(request, account)
-#             return redirect(resolve_url('/'))
-
-#     return render(request, 'login.html', context)
-
-# def user_register(request):
-#     if (not request.user.is_anonymous):
-# 	    return redirect(resolve_url('/'))
-
-#     form = AuthForm(request.POST or None)
-#     context = {
-#         'form': form,
-#         'isError': False,
-#         'Error': '',
-#     }
-
-#     if (request.method == "POST"):
-#         acount = None
-#         try:
-#             account = User.objects.get(username = request.POST['nama'])
-#         except:
-#             account = None
-#         if (account == None):
-#             new_account = User.objects.create_user(request.POST['nama'], '', request.POST['password'])
-#             new_account.save()
-#             login(request, new_account)
-#             return redirect(resolve_url('/'))
-#         else:
-#             context['isError'] = True
-#             context['Error'] = 'Sudah ada akun dengan username ' + request.POST['nama']
-#             context['Form'] = AuthForm()
-#             return render(request, 'register.html', context)
-
-
-#     return render(request, 'register.html', context)
-
-# def user_logout(request):
-#     logout(request)
-#     return redirect(resolve_url('users:login'))
-
-# INI CODE SEBELUM GANIII
-# from django.shortcuts import redirect, render
-# from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth import authenticate, login, logout
-
-# # Create your views here.
-
-# def signup(request):
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("login")
-#         return render(request, "register.html")
-#     else:
-#         return render(request, "register.html")
-
-# def login(request):
-#     if request.method == "POST":
-#         username = request.POST["username"]
-#         password = request.POST["password"]
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect("/")
-#         return render(request, "login.html")
-#     else:
-#         return render(request, "login.html")
-
-# def signout(request):
-#     logout(request)
-#     return redirect("/")
-
-
-
-    # INI CODE GANIIIIIII
 from django.shortcuts import redirect, render
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserModel
+from .forms import AuthForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
 
 def signup(request):
     if request.method == "POST":
@@ -131,11 +28,72 @@ def signin(request):
         if user is not None:
             login(request, user)
             return redirect("homepage:index")
-        return render(request, "login.html")
-    else:
-        return render(request, "login.html")
+        else:
+            messages.info(request, 'Username OR password is incorrect')
+
+    context = {}
+    return render(request, "login.html")
+    
 
 def signout(request):
   logout(request)
-  return redirect("/")
+  return redirect("users:login")
+
+@csrf_exempt
+def registerFlutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        username = data["username"]
+        password1 = data["password1"]
+
+        newUser = UserModel.objects.create_user(
+        username = username, 
+        password = password1,
+        )
+
+        newUser.save()
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
+@csrf_exempt
+def loginFlutter(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+            return JsonResponse({
+              "status": True,
+              "username": request.user.username,
+              "message": "Successfully Logged In!"
+            }, status=200)
+        else:
+            return JsonResponse({
+              "status": False,
+              "message": "Failed to Login, Account Disabled."
+            }, status=401)
+
+    else:
+        return JsonResponse({
+          "status": False,
+          "message": "Failed to Login, check your email/password."
+        }, status=401)
+
+@csrf_exempt
+def logoutFlutter(request):
+    try:
+        logout(request)
+        return JsonResponse({
+                    "status": True,
+                    "message": "Successfully Logged out!"
+                }, status=200)
+    except:
+        return JsonResponse({
+          "status": False,
+          "message": "Failed to Logout"
+        }, status=401)
 

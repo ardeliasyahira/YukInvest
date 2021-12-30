@@ -11,13 +11,16 @@
 # app_name = 'users'
 
 from django.urls import path
-from .views import signup, signin, signout
+from users.views import *
 
 app_name = 'users'
 
 urlpatterns = [
     path('login/', signin, name="login"),
     path('register/', signup, name="register"),
-    path('signout/', signout, name="signout")
+    path('signout/', signout, name="signout"),
+    path('loginflutter', loginFlutter, name='loginFlutter'),
+    path('registerflutter', registerFlutter, name='registerFlutter'),
+    path('logoutflutter',logoutFlutter,name='logoutFlutter'),
 ]
 
