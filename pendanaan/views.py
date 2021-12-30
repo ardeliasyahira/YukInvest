@@ -9,43 +9,30 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, "pendanaan/index_pendanaan.html")
 
-# @login_required(login_url="")
+@login_required(login_url="users:login")
 def view_umkm(request):
-    umkm = UMKM.objects.all()
-    # user_umkm = umkm.filter(user=request.user)
-    obj = UMKM.objects.get(pk=1)
+    obj = UMKM.objects.filter(request.user).get(pk=1)
     obj_dict = {"obj": obj}
     return render(request, "pendanaan/view_umkm.html", obj_dict)
 
-# @login_required(login_url="")
+@login_required(login_url="users:login")
 def get_umkm(request):
-    umkm = UMKM.objects.all()
+    umkm = UMKM.objects.filter(request.user).get(pk=1)
     umkm_json = serializers.serialize("json", umkm)
     return HttpResponse(umkm_json, content_type="application/json")
 
-# @login_required(login_url="")
+@login_required(login_url="users:login")
 def add_umkm(request):
     form = UMKMForm()
-    umkm = UMKM.objects.all()
-    # user_umkm = umkm.filter(user=request.user)
-    #  if user_umkm:
-	#  return redirect("pendanaan:view_umkm")
-    if request.method == "POST":
-        # data = request.POST.dict()
-        # data["user"] = request.user
-        form = UMKMForm(request.POST, request.FILES)
+    umkm = UMKM.objects.filter(request.user).get(pk=1)
+    if umkm:
+        return redirect("pendanaan:view_umkm")
+    elif request.method == "POST":
+        data = request.POST.dict()
+        data["user"] = request.user
+        form = UMKMForm(data, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("pendanaan:view_umkm")
     context = {"form": form}
     return render(request, "pendanaan/add_umkm.html", context)
-
-
-# @login_required(login_url="")
-def delete_umkm(request, umkm_id):
-    try:
-        UMKM.objects.get(id=umkm_id).delete()
-    except Exception as e:
-        print(e)
-    finally:
-        return redirect("") #
