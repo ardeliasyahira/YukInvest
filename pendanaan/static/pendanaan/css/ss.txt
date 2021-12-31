@@ -1,0 +1,20 @@
+https://www.geeksforgeeks.org/print-bst-keys-in-the-given-range/
+
+https://github.com/eugenp/tutorials/blob/master/data-structures/src/main/java/com/baeldung/avltree/AVLTree.java
+
+https://www.geeksforgeeks.org/avl-with-duplicate-keys/
+
+https://www.geeksforgeeks.org/find-the-node-with-maximum-value-in-a-binary-search-tree/
+
+https://www.geeksforgeeks.org/print-bst-keys-in-the-given-range/
+
+1
+SAPE 14 6 3 4 3 8 4 3 4 12 11 9 2 9 11
+SAPE 7
+4
+CRUMBLE
+STABILIZE
+CRUMBLE
+STABILIZE
+CRUMBLE
+CRUMBLE
